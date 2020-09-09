@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:food_app_with_animation/ui/pages/detail_page.dart';
 import 'package:food_app_with_animation/ui/pages/home_page.dart';
 
 void main() {
@@ -42,8 +41,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       title: 'Material App',
-      // home: HomePage(),
-      home: DetailPage(),
+      home: HomePage(),
     );
   }
 }
