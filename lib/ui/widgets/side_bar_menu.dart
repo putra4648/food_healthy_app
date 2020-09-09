@@ -2,15 +2,47 @@ import 'package:flutter/material.dart';
 
 import '../../constant.dart';
 
-class SideBarMenu extends StatelessWidget {
+class SideBarMenu extends StatefulWidget {
   final Size size;
 
   const SideBarMenu({Key key, this.size}) : super(key: key);
+
+  @override
+  _SideBarMenuState createState() => _SideBarMenuState();
+}
+
+class _SideBarMenuState extends State<SideBarMenu> {
+  int _counter = 0;
+  bool _isPressed;
+
+  @override
+  void initState() {
+    _isPressed = false;
+    super.initState();
+  }
+
+  void _incrementCounter() {
+    setState(() {
+      _isPressed = true;
+      _counter++;
+    });
+  }
+
+  Function _counterButtonPressed() {
+    if (_isPressed) {
+      return null;
+    } else {
+      return () {
+        _incrementCounter();
+      };
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: size.width * 0.2,
-      height: size.height,
+      width: widget.size.width * 0.2,
+      height: widget.size.height,
       color: iconMenuColor,
       child: Column(
         children: [
@@ -24,7 +56,7 @@ class SideBarMenu extends StatelessWidget {
 
   Container buildThirdMenu(BuildContext context) {
     return Container(
-      height: size.height * 0.15,
+      height: widget.size.height * 0.15,
       child: IconButton(
         icon: Icon(
           Icons.settings,
@@ -38,29 +70,39 @@ class SideBarMenu extends StatelessWidget {
 
   Container buildSecondMenu(BuildContext context) {
     return Container(
-      height: size.height * 0.6,
+      height: widget.size.height * 0.6,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           RotatedBox(
             quarterTurns: -1,
-            child: Text(
-              'Bakery',
-              style: Theme.of(context).textTheme.headline4,
+            child: FlatButton(
+              disabledTextColor: Theme.of(context).primaryIconTheme.color,
+              onPressed: null,
+              child: Text(
+                'Bakery $_counter',
+                style: Theme.of(context).textTheme.headline4,
+              ),
             ),
           ),
           RotatedBox(
             quarterTurns: -1,
-            child: Text(
-              'Food',
-              style: Theme.of(context).textTheme.headline4,
+            child: FlatButton(
+              onPressed: () {},
+              child: Text(
+                'Food',
+                style: Theme.of(context).textTheme.headline4,
+              ),
             ),
           ),
           RotatedBox(
             quarterTurns: -1,
-            child: Text(
-              'Drinks',
-              style: Theme.of(context).textTheme.headline4,
+            child: FlatButton(
+              onPressed: () {},
+              child: Text(
+                'Drinks',
+                style: Theme.of(context).textTheme.headline4,
+              ),
             ),
           ),
         ],
@@ -71,7 +113,7 @@ class SideBarMenu extends StatelessWidget {
   Container buildFirstMenu(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(15),
-      height: size.height * 0.25,
+      height: widget.size.height * 0.25,
       child: Column(
         children: [
           IconButton(
@@ -80,9 +122,7 @@ class SideBarMenu extends StatelessWidget {
               size: 28,
               color: Theme.of(context).primaryIconTheme.color,
             ),
-            onPressed: () {
-              print('This menu');
-            },
+            onPressed: () {},
           ),
           IconButton(
             icon: Icon(
