@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:food_app_with_animation/ui/widgets/side_bar_menu.dart';
-import 'package:food_app_with_animation/ui/widgets/side_body_view.dart';
+
+import '../widgets/home_widget/side_bar_menu.dart';
+import '../widgets/home_widget/side_body_view.dart';
 
 class HomePage extends StatelessWidget {
   @override

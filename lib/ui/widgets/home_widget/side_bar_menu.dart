@@ -1,49 +1,15 @@
 import 'package:flutter/material.dart';
 
-import '../../constant.dart';
-
-class SideBarMenu extends StatefulWidget {
+class SideBarMenu extends StatelessWidget {
   final Size size;
 
   const SideBarMenu({Key key, this.size}) : super(key: key);
 
   @override
-  _SideBarMenuState createState() => _SideBarMenuState();
-}
-
-class _SideBarMenuState extends State<SideBarMenu> {
-  int _counter = 0;
-  bool _isPressed;
-
-  @override
-  void initState() {
-    _isPressed = false;
-    super.initState();
-  }
-
-  void _incrementCounter() {
-    setState(() {
-      _isPressed = true;
-      _counter++;
-    });
-  }
-
-  Function _counterButtonPressed() {
-    if (_isPressed) {
-      return null;
-    } else {
-      return () {
-        _incrementCounter();
-      };
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Container(
-      width: widget.size.width * 0.2,
-      height: widget.size.height,
-      color: iconMenuColor,
+      width: size.width * 0.2,
+      height: size.height,
       child: Column(
         children: [
           buildFirstMenu(context),
@@ -54,9 +20,9 @@ class _SideBarMenuState extends State<SideBarMenu> {
     );
   }
 
-  Container buildThirdMenu(BuildContext context) {
+  Widget buildThirdMenu(BuildContext context) {
     return Container(
-      height: widget.size.height * 0.15,
+      height: size.height * 0.15,
       child: IconButton(
         icon: Icon(
           Icons.settings,
@@ -68,9 +34,9 @@ class _SideBarMenuState extends State<SideBarMenu> {
     );
   }
 
-  Container buildSecondMenu(BuildContext context) {
+  Widget buildSecondMenu(BuildContext context) {
     return Container(
-      height: widget.size.height * 0.6,
+      height: size.height * 0.6,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -78,9 +44,9 @@ class _SideBarMenuState extends State<SideBarMenu> {
             quarterTurns: -1,
             child: FlatButton(
               disabledTextColor: Theme.of(context).primaryIconTheme.color,
-              onPressed: null,
+              onPressed: () {},
               child: Text(
-                'Bakery $_counter',
+                'Bakery ',
                 style: Theme.of(context).textTheme.headline4,
               ),
             ),
@@ -110,10 +76,10 @@ class _SideBarMenuState extends State<SideBarMenu> {
     );
   }
 
-  Container buildFirstMenu(BuildContext context) {
+  Widget buildFirstMenu(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(15),
-      height: widget.size.height * 0.25,
+      height: size.height * 0.25,
       child: Column(
         children: [
           IconButton(

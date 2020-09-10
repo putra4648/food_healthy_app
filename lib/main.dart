@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:food_app_with_animation/ui/pages/home_page.dart';
+
+import 'ui/pages/home_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,6 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         floatingActionButtonTheme: FloatingActionButtonThemeData(
           backgroundColor: Color(0xfffe9071),
@@ -20,8 +22,9 @@ class MyApp extends StatelessWidget {
           color: Color(0xffa7a8b1),
         ),
         iconTheme: IconThemeData(
-          color: Color(0xffd6957a),
+          color: Color(0xfffe9172),
         ),
+        canvasColor: Color(0xfffaecdb),
         textTheme: TextTheme(
           headline2: TextStyle(
             color: Colors.black,
@@ -42,6 +45,7 @@ class MyApp extends StatelessWidget {
       ),
       title: 'Material App',
       home: HomePage(),
+      // home: DetailPage(),
     );
   }
 }
