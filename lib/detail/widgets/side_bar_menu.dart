@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class SideBarMenu extends StatelessWidget {
   const SideBarMenu({
-    Key key,
-    @required this.size,
+    Key? key,
+    required this.size,
   }) : super(key: key);
 
   final Size size;

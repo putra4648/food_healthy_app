@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/detail_widget/body.dart';
-import '../widgets/detail_widget/side_bar_menu.dart';
+import '../widgets/body.dart';
+import '../widgets/side_bar_menu.dart';
 
 class DetailPage extends StatelessWidget {
   @override

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_app_with_animation/ui/pages/detail_page.dart';
+import 'package:food_app_with_animation/detail/page/detail_page.dart';
 
 import '../../../dummy_food_data.dart';
 import '../../../icon_category.dart';
