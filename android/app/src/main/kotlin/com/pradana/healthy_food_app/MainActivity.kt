@@ -1,4 +1,4 @@
-package com.example.food_app_with_animation
+package com.pradana.healthy_food_app
 
 import io.flutter.embedding.android.FlutterActivity
 

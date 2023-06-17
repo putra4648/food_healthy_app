@@ -26,7 +26,7 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-     namespace "com.example.food_app_with_animation"
+     namespace "com.pradana.healthy_food_app"
 
 
     compileSdkVersion 31
@@ -41,7 +41,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.food_app_with_animation"
+        applicationId "com.pradana.healthy_food_app"
         minSdkVersion 16
         targetSdkVersion 31
         versionCode flutterVersionCode.toInteger()
