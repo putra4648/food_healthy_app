@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'ui/pages/home_page.dart';
-
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setEnabledSystemUIOverlays([]);
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
   runApp(MyApp());
 }
 
@@ -26,17 +24,17 @@ class MyApp extends StatelessWidget {
         ),
         canvasColor: Color(0xfffaecdb),
         textTheme: TextTheme(
-          headline2: TextStyle(
+          displayMedium: TextStyle(
             color: Colors.black,
             fontSize: 25,
             fontWeight: FontWeight.w700,
           ),
-          headline4: TextStyle(
+          headlineMedium: TextStyle(
             color: Colors.black,
             fontSize: 20,
             fontWeight: FontWeight.w700,
           ),
-          headline5: TextStyle(
+          headlineSmall: TextStyle(
             color: Color(0xffa7a8b1),
             fontSize: 16,
             fontWeight: FontWeight.w600,
@@ -44,7 +42,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       title: 'Material App',
-      home: HomePage(),
+      home: Container(),
       // home: DetailPage(),
     );
   }
