@@ -1,12 +1,7 @@
-# food_app
-Inspiration from
-[Link to his Dribble](https://dribbble.com/shots/6804284-Recipe-app-design)
+## Information
 
-Trying to implement UI from Dribble :smiley:
-
-## Getting Started
-
-### ScreenShot
-<img src=".screenshot/home.png" alt="home" width="480" height="854"></img>
+This app will be redesign something better.
+Stay tuned.
+🚧🚧🚧🚧🚧🚧🚧
 
 
