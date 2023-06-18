@@ -1,7 +1,7 @@
-/// {@template food_repository}
-/// A Very Good Project created by Very Good CLI.
-/// {@endtemplate}
-class FoodRepository {
-  /// {@macro food_repository}
-  const FoodRepository();
+import 'package:food_repository/src/dio_client.dart';
+
+void main() {
+  final client = DioClient();
+
+  client.test();
 }
