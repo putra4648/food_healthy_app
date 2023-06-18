@@ -1,5 +1,5 @@
 name: food_repository
-description: A Very Good Project created by Very Good CLI.
+description: Local package contain features with Edamam API
 version: 0.1.0+1
 publish_to: none
 
