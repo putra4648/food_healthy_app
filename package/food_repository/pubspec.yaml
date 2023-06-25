@@ -11,5 +11,5 @@ dev_dependencies:
   test: ^1.19.2
   very_good_analysis: ^5.0.0
 dependencies:
-  dio: ^5.2.1+1
+  http: ^1.0.0
   logger: ^1.4.0
