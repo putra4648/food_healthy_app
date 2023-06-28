@@ -35,9 +35,8 @@ _\*Food Healthy App works on iOS, Android, Web, and Windows._
 
 ---
 
-## Running Tests 🧪
-
-To run all unit and widget tests use the following command:
+## Running Tests 
+rul unit and widget tests use the following command:
 
 ```sh
 $ flutter test --coverage --test-randomize-ordering-seed random
@@ -160,11 +159,11 @@ Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info
 [license_badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [license_link]: https://opensource.org/licenses/MIT
 [very_good_analysis_badge]: https://img.shields.io/badge/style-very_good_analysis-B22C89.svg
-[very_good_analysis_link]: https://pub.dev/packages/very_good_analysis
+[very_good_analysis_link]: httpsub.dev/packages/very_good_analysis
 [very_good_cli_link]: https://github.com/VeryGoodOpenSource/very_good_cli
 -->
 
 ### About
 Currently this project still on progress and not yet finished
 
-🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
+🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
