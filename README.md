@@ -164,3 +164,5 @@ Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info
 -->
 ## Status
 This project status currently on rebuild
+
+untill i have free time
