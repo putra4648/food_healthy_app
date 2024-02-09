@@ -21,10 +21,10 @@ Ingredient _$IngredientFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Ingredient {
   String? get text => throw _privateConstructorUsedError;
-  int? get quantity => throw _privateConstructorUsedError;
+  num? get quantity => throw _privateConstructorUsedError;
   String? get measure => throw _privateConstructorUsedError;
   String? get food => throw _privateConstructorUsedError;
-  int? get weight => throw _privateConstructorUsedError;
+  num? get weight => throw _privateConstructorUsedError;
   String? get foodId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -41,10 +41,10 @@ abstract class $IngredientCopyWith<$Res> {
   @useResult
   $Res call(
       {String? text,
-      int? quantity,
+      num? quantity,
       String? measure,
       String? food,
-      int? weight,
+      num? weight,
       String? foodId});
 }
 
@@ -76,7 +76,7 @@ class _$IngredientCopyWithImpl<$Res, $Val extends Ingredient>
       quantity: freezed == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       measure: freezed == measure
           ? _value.measure
           : measure // ignore: cast_nullable_to_non_nullable
@@ -88,7 +88,7 @@ class _$IngredientCopyWithImpl<$Res, $Val extends Ingredient>
       weight: freezed == weight
           ? _value.weight
           : weight // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       foodId: freezed == foodId
           ? _value.foodId
           : foodId // ignore: cast_nullable_to_non_nullable
@@ -107,10 +107,10 @@ abstract class _$$IngredientImplCopyWith<$Res>
   @useResult
   $Res call(
       {String? text,
-      int? quantity,
+      num? quantity,
       String? measure,
       String? food,
-      int? weight,
+      num? weight,
       String? foodId});
 }
 
@@ -140,7 +140,7 @@ class __$$IngredientImplCopyWithImpl<$Res>
       quantity: freezed == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       measure: freezed == measure
           ? _value.measure
           : measure // ignore: cast_nullable_to_non_nullable
@@ -152,7 +152,7 @@ class __$$IngredientImplCopyWithImpl<$Res>
       weight: freezed == weight
           ? _value.weight
           : weight // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       foodId: freezed == foodId
           ? _value.foodId
           : foodId // ignore: cast_nullable_to_non_nullable
@@ -178,13 +178,13 @@ class _$IngredientImpl implements _Ingredient {
   @override
   final String? text;
   @override
-  final int? quantity;
+  final num? quantity;
   @override
   final String? measure;
   @override
   final String? food;
   @override
-  final int? weight;
+  final num? weight;
   @override
   final String? foodId;
 
@@ -229,10 +229,10 @@ class _$IngredientImpl implements _Ingredient {
 abstract class _Ingredient implements Ingredient {
   const factory _Ingredient(
       {final String? text,
-      final int? quantity,
+      final num? quantity,
       final String? measure,
       final String? food,
-      final int? weight,
+      final num? weight,
       final String? foodId}) = _$IngredientImpl;
 
   factory _Ingredient.fromJson(Map<String, dynamic> json) =
@@ -241,13 +241,13 @@ abstract class _Ingredient implements Ingredient {
   @override
   String? get text;
   @override
-  int? get quantity;
+  num? get quantity;
   @override
   String? get measure;
   @override
   String? get food;
   @override
-  int? get weight;
+  num? get weight;
   @override
   String? get foodId;
   @override

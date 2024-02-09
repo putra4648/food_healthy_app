@@ -1,3 +1,4 @@
+import 'package:food_repository/src/model/hit.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'search_response.freezed.dart';
@@ -11,6 +12,7 @@ class SearchResponse with _$SearchResponse {
     int? from,
     int? to,
     int? count,
+    List<Hit>? hits,
   }) = _SearchResponse;
 
   factory SearchResponse.fromJson(Map<String, Object?> json) =>

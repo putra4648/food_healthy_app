@@ -21,7 +21,7 @@ Nutrient _$NutrientFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Nutrient {
   String? get label => throw _privateConstructorUsedError;
-  int? get quantity => throw _privateConstructorUsedError;
+  num? get quantity => throw _privateConstructorUsedError;
   String? get unit => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -35,7 +35,7 @@ abstract class $NutrientCopyWith<$Res> {
   factory $NutrientCopyWith(Nutrient value, $Res Function(Nutrient) then) =
       _$NutrientCopyWithImpl<$Res, Nutrient>;
   @useResult
-  $Res call({String? label, int? quantity, String? unit});
+  $Res call({String? label, num? quantity, String? unit});
 }
 
 /// @nodoc
@@ -63,7 +63,7 @@ class _$NutrientCopyWithImpl<$Res, $Val extends Nutrient>
       quantity: freezed == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       unit: freezed == unit
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
@@ -80,7 +80,7 @@ abstract class _$$NutrientImplCopyWith<$Res>
       __$$NutrientImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? label, int? quantity, String? unit});
+  $Res call({String? label, num? quantity, String? unit});
 }
 
 /// @nodoc
@@ -106,7 +106,7 @@ class __$$NutrientImplCopyWithImpl<$Res>
       quantity: freezed == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       unit: freezed == unit
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
@@ -126,7 +126,7 @@ class _$NutrientImpl implements _Nutrient {
   @override
   final String? label;
   @override
-  final int? quantity;
+  final num? quantity;
   @override
   final String? unit;
 
@@ -167,7 +167,7 @@ class _$NutrientImpl implements _Nutrient {
 abstract class _Nutrient implements Nutrient {
   const factory _Nutrient(
       {final String? label,
-      final int? quantity,
+      final num? quantity,
       final String? unit}) = _$NutrientImpl;
 
   factory _Nutrient.fromJson(Map<String, dynamic> json) =
@@ -176,7 +176,7 @@ abstract class _Nutrient implements Nutrient {
   @override
   String? get label;
   @override
-  int? get quantity;
+  num? get quantity;
   @override
   String? get unit;
   @override

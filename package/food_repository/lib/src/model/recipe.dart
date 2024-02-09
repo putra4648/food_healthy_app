@@ -1,3 +1,4 @@
+import 'package:food_repository/src/model/ingredient.dart';
 import 'package:food_repository/src/model/nutrient.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -15,17 +16,17 @@ class Recipe with _$Recipe {
     String? source,
     String? url,
     String? shareAs,
-    String? yield,
+    num? yield,
     List<String>? dietLabels,
     List<String>? healthLabels,
     List<String>? cautions,
     List<String>? ingredientLines,
-    List<String>? ingredients,
-    int? calories,
-    int? glycemicIndex,
-    int? inflammatoryIndex,
-    int? totalCO2Emissions,
-    int? totalWeight,
+    List<Ingredient>? ingredients,
+    num? calories,
+    num? glycemicIndex,
+    num? inflammatoryIndex,
+    num? totalCO2Emissions,
+    num? totalWeight,
     List<String>? cuisineType,
     List<String>? mealType,
     List<String>? dishType,

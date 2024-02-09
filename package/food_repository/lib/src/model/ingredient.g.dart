@@ -9,10 +9,10 @@ part of 'ingredient.dart';
 _$IngredientImpl _$$IngredientImplFromJson(Map<String, dynamic> json) =>
     _$IngredientImpl(
       text: json['text'] as String?,
-      quantity: json['quantity'] as int?,
+      quantity: json['quantity'] as num?,
       measure: json['measure'] as String?,
       food: json['food'] as String?,
-      weight: json['weight'] as int?,
+      weight: json['weight'] as num?,
       foodId: json['foodId'] as String?,
     );
 

@@ -9,7 +9,7 @@ class Nutrient with _$Nutrient {
   /// Public method for any getter & setter
   const factory Nutrient({
     String? label,
-    int? quantity,
+    num? quantity,
     String? unit,
   }) = _Nutrient;
 

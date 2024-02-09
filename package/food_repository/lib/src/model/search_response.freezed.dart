@@ -23,6 +23,7 @@ mixin _$SearchResponse {
   int? get from => throw _privateConstructorUsedError;
   int? get to => throw _privateConstructorUsedError;
   int? get count => throw _privateConstructorUsedError;
+  List<Hit>? get hits => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +37,7 @@ abstract class $SearchResponseCopyWith<$Res> {
           SearchResponse value, $Res Function(SearchResponse) then) =
       _$SearchResponseCopyWithImpl<$Res, SearchResponse>;
   @useResult
-  $Res call({int? from, int? to, int? count});
+  $Res call({int? from, int? to, int? count, List<Hit>? hits});
 }
 
 /// @nodoc
@@ -55,6 +56,7 @@ class _$SearchResponseCopyWithImpl<$Res, $Val extends SearchResponse>
     Object? from = freezed,
     Object? to = freezed,
     Object? count = freezed,
+    Object? hits = freezed,
   }) {
     return _then(_value.copyWith(
       from: freezed == from
@@ -69,6 +71,10 @@ class _$SearchResponseCopyWithImpl<$Res, $Val extends SearchResponse>
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
               as int?,
+      hits: freezed == hits
+          ? _value.hits
+          : hits // ignore: cast_nullable_to_non_nullable
+              as List<Hit>?,
     ) as $Val);
   }
 }
@@ -81,7 +87,7 @@ abstract class _$$SearchResponseImplCopyWith<$Res>
       __$$SearchResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? from, int? to, int? count});
+  $Res call({int? from, int? to, int? count, List<Hit>? hits});
 }
 
 /// @nodoc
@@ -98,6 +104,7 @@ class __$$SearchResponseImplCopyWithImpl<$Res>
     Object? from = freezed,
     Object? to = freezed,
     Object? count = freezed,
+    Object? hits = freezed,
   }) {
     return _then(_$SearchResponseImpl(
       from: freezed == from
@@ -112,6 +119,10 @@ class __$$SearchResponseImplCopyWithImpl<$Res>
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
               as int?,
+      hits: freezed == hits
+          ? _value._hits
+          : hits // ignore: cast_nullable_to_non_nullable
+              as List<Hit>?,
     ));
   }
 }
@@ -119,7 +130,9 @@ class __$$SearchResponseImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$SearchResponseImpl implements _SearchResponse {
-  const _$SearchResponseImpl({this.from, this.to, this.count});
+  const _$SearchResponseImpl(
+      {this.from, this.to, this.count, final List<Hit>? hits})
+      : _hits = hits;
 
   factory _$SearchResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$SearchResponseImplFromJson(json);
@@ -130,10 +143,19 @@ class _$SearchResponseImpl implements _SearchResponse {
   final int? to;
   @override
   final int? count;
+  final List<Hit>? _hits;
+  @override
+  List<Hit>? get hits {
+    final value = _hits;
+    if (value == null) return null;
+    if (_hits is EqualUnmodifiableListView) return _hits;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
-    return 'SearchResponse(from: $from, to: $to, count: $count)';
+    return 'SearchResponse(from: $from, to: $to, count: $count, hits: $hits)';
   }
 
   @override
@@ -143,12 +165,14 @@ class _$SearchResponseImpl implements _SearchResponse {
             other is _$SearchResponseImpl &&
             (identical(other.from, from) || other.from == from) &&
             (identical(other.to, to) || other.to == to) &&
-            (identical(other.count, count) || other.count == count));
+            (identical(other.count, count) || other.count == count) &&
+            const DeepCollectionEquality().equals(other._hits, _hits));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, from, to, count);
+  int get hashCode => Object.hash(
+      runtimeType, from, to, count, const DeepCollectionEquality().hash(_hits));
 
   @JsonKey(ignore: true)
   @override
@@ -169,7 +193,8 @@ abstract class _SearchResponse implements SearchResponse {
   const factory _SearchResponse(
       {final int? from,
       final int? to,
-      final int? count}) = _$SearchResponseImpl;
+      final int? count,
+      final List<Hit>? hits}) = _$SearchResponseImpl;
 
   factory _SearchResponse.fromJson(Map<String, dynamic> json) =
       _$SearchResponseImpl.fromJson;
@@ -180,6 +205,8 @@ abstract class _SearchResponse implements SearchResponse {
   int? get to;
   @override
   int? get count;
+  @override
+  List<Hit>? get hits;
   @override
   @JsonKey(ignore: true)
   _$$SearchResponseImplCopyWith<_$SearchResponseImpl> get copyWith =>

@@ -12,7 +12,7 @@ _$DigestImpl _$$DigestImplFromJson(Map<String, dynamic> json) => _$DigestImpl(
       schemaOrgTag: json['schemaOrgTag'] as String?,
       total: json['total'] as String?,
       hasRDI: json['hasRDI'] as bool?,
-      daily: json['daily'] as int?,
+      daily: json['daily'] as num?,
       unit: json['unit'] as String?,
     );
 

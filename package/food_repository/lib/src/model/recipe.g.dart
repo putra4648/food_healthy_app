@@ -13,7 +13,7 @@ _$RecipeImpl _$$RecipeImplFromJson(Map<String, dynamic> json) => _$RecipeImpl(
       source: json['source'] as String?,
       url: json['url'] as String?,
       shareAs: json['shareAs'] as String?,
-      yield: json['yield'] as String?,
+      yield: json['yield'] as num?,
       dietLabels: (json['dietLabels'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -27,13 +27,13 @@ _$RecipeImpl _$$RecipeImplFromJson(Map<String, dynamic> json) => _$RecipeImpl(
           ?.map((e) => e as String)
           .toList(),
       ingredients: (json['ingredients'] as List<dynamic>?)
-          ?.map((e) => e as String)
+          ?.map((e) => Ingredient.fromJson(e as Map<String, dynamic>))
           .toList(),
-      calories: json['calories'] as int?,
-      glycemicIndex: json['glycemicIndex'] as int?,
-      inflammatoryIndex: json['inflammatoryIndex'] as int?,
-      totalCO2Emissions: json['totalCO2Emissions'] as int?,
-      totalWeight: json['totalWeight'] as int?,
+      calories: json['calories'] as num?,
+      glycemicIndex: json['glycemicIndex'] as num?,
+      inflammatoryIndex: json['inflammatoryIndex'] as num?,
+      totalCO2Emissions: json['totalCO2Emissions'] as num?,
+      totalWeight: json['totalWeight'] as num?,
       cuisineType: (json['cuisineType'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),

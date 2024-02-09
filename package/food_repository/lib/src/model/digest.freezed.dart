@@ -25,7 +25,7 @@ mixin _$Digest {
   String? get schemaOrgTag => throw _privateConstructorUsedError;
   String? get total => throw _privateConstructorUsedError;
   bool? get hasRDI => throw _privateConstructorUsedError;
-  int? get daily => throw _privateConstructorUsedError;
+  num? get daily => throw _privateConstructorUsedError;
   String? get unit => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -44,7 +44,7 @@ abstract class $DigestCopyWith<$Res> {
       String? schemaOrgTag,
       String? total,
       bool? hasRDI,
-      int? daily,
+      num? daily,
       String? unit});
 }
 
@@ -93,7 +93,7 @@ class _$DigestCopyWithImpl<$Res, $Val extends Digest>
       daily: freezed == daily
           ? _value.daily
           : daily // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       unit: freezed == unit
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
@@ -115,7 +115,7 @@ abstract class _$$DigestImplCopyWith<$Res> implements $DigestCopyWith<$Res> {
       String? schemaOrgTag,
       String? total,
       bool? hasRDI,
-      int? daily,
+      num? daily,
       String? unit});
 }
 
@@ -162,7 +162,7 @@ class __$$DigestImplCopyWithImpl<$Res>
       daily: freezed == daily
           ? _value.daily
           : daily // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       unit: freezed == unit
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
@@ -197,7 +197,7 @@ class _$DigestImpl implements _Digest {
   @override
   final bool? hasRDI;
   @override
-  final int? daily;
+  final num? daily;
   @override
   final String? unit;
 
@@ -247,7 +247,7 @@ abstract class _Digest implements Digest {
       final String? schemaOrgTag,
       final String? total,
       final bool? hasRDI,
-      final int? daily,
+      final num? daily,
       final String? unit}) = _$DigestImpl;
 
   factory _Digest.fromJson(Map<String, dynamic> json) = _$DigestImpl.fromJson;
@@ -263,7 +263,7 @@ abstract class _Digest implements Digest {
   @override
   bool? get hasRDI;
   @override
-  int? get daily;
+  num? get daily;
   @override
   String? get unit;
   @override

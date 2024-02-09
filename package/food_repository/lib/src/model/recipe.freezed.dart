@@ -26,17 +26,17 @@ mixin _$Recipe {
   String? get source => throw _privateConstructorUsedError;
   String? get url => throw _privateConstructorUsedError;
   String? get shareAs => throw _privateConstructorUsedError;
-  String? get yield => throw _privateConstructorUsedError;
+  num? get yield => throw _privateConstructorUsedError;
   List<String>? get dietLabels => throw _privateConstructorUsedError;
   List<String>? get healthLabels => throw _privateConstructorUsedError;
   List<String>? get cautions => throw _privateConstructorUsedError;
   List<String>? get ingredientLines => throw _privateConstructorUsedError;
-  List<String>? get ingredients => throw _privateConstructorUsedError;
-  int? get calories => throw _privateConstructorUsedError;
-  int? get glycemicIndex => throw _privateConstructorUsedError;
-  int? get inflammatoryIndex => throw _privateConstructorUsedError;
-  int? get totalCO2Emissions => throw _privateConstructorUsedError;
-  int? get totalWeight => throw _privateConstructorUsedError;
+  List<Ingredient>? get ingredients => throw _privateConstructorUsedError;
+  num? get calories => throw _privateConstructorUsedError;
+  num? get glycemicIndex => throw _privateConstructorUsedError;
+  num? get inflammatoryIndex => throw _privateConstructorUsedError;
+  num? get totalCO2Emissions => throw _privateConstructorUsedError;
+  num? get totalWeight => throw _privateConstructorUsedError;
   List<String>? get cuisineType => throw _privateConstructorUsedError;
   List<String>? get mealType => throw _privateConstructorUsedError;
   List<String>? get dishType => throw _privateConstructorUsedError;
@@ -63,17 +63,17 @@ abstract class $RecipeCopyWith<$Res> {
       String? source,
       String? url,
       String? shareAs,
-      String? yield,
+      num? yield,
       List<String>? dietLabels,
       List<String>? healthLabels,
       List<String>? cautions,
       List<String>? ingredientLines,
-      List<String>? ingredients,
-      int? calories,
-      int? glycemicIndex,
-      int? inflammatoryIndex,
-      int? totalCO2Emissions,
-      int? totalWeight,
+      List<Ingredient>? ingredients,
+      num? calories,
+      num? glycemicIndex,
+      num? inflammatoryIndex,
+      num? totalCO2Emissions,
+      num? totalWeight,
       List<String>? cuisineType,
       List<String>? mealType,
       List<String>? dishType,
@@ -154,7 +154,7 @@ class _$RecipeCopyWithImpl<$Res, $Val extends Recipe>
       yield: freezed == yield
           ? _value.yield
           : yield // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as num?,
       dietLabels: freezed == dietLabels
           ? _value.dietLabels
           : dietLabels // ignore: cast_nullable_to_non_nullable
@@ -174,27 +174,27 @@ class _$RecipeCopyWithImpl<$Res, $Val extends Recipe>
       ingredients: freezed == ingredients
           ? _value.ingredients
           : ingredients // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<Ingredient>?,
       calories: freezed == calories
           ? _value.calories
           : calories // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       glycemicIndex: freezed == glycemicIndex
           ? _value.glycemicIndex
           : glycemicIndex // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       inflammatoryIndex: freezed == inflammatoryIndex
           ? _value.inflammatoryIndex
           : inflammatoryIndex // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       totalCO2Emissions: freezed == totalCO2Emissions
           ? _value.totalCO2Emissions
           : totalCO2Emissions // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       totalWeight: freezed == totalWeight
           ? _value.totalWeight
           : totalWeight // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       cuisineType: freezed == cuisineType
           ? _value.cuisineType
           : cuisineType // ignore: cast_nullable_to_non_nullable
@@ -269,17 +269,17 @@ abstract class _$$RecipeImplCopyWith<$Res> implements $RecipeCopyWith<$Res> {
       String? source,
       String? url,
       String? shareAs,
-      String? yield,
+      num? yield,
       List<String>? dietLabels,
       List<String>? healthLabels,
       List<String>? cautions,
       List<String>? ingredientLines,
-      List<String>? ingredients,
-      int? calories,
-      int? glycemicIndex,
-      int? inflammatoryIndex,
-      int? totalCO2Emissions,
-      int? totalWeight,
+      List<Ingredient>? ingredients,
+      num? calories,
+      num? glycemicIndex,
+      num? inflammatoryIndex,
+      num? totalCO2Emissions,
+      num? totalWeight,
       List<String>? cuisineType,
       List<String>? mealType,
       List<String>? dishType,
@@ -360,7 +360,7 @@ class __$$RecipeImplCopyWithImpl<$Res>
       yield: freezed == yield
           ? _value.yield
           : yield // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as num?,
       dietLabels: freezed == dietLabels
           ? _value._dietLabels
           : dietLabels // ignore: cast_nullable_to_non_nullable
@@ -380,27 +380,27 @@ class __$$RecipeImplCopyWithImpl<$Res>
       ingredients: freezed == ingredients
           ? _value._ingredients
           : ingredients // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<Ingredient>?,
       calories: freezed == calories
           ? _value.calories
           : calories // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       glycemicIndex: freezed == glycemicIndex
           ? _value.glycemicIndex
           : glycemicIndex // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       inflammatoryIndex: freezed == inflammatoryIndex
           ? _value.inflammatoryIndex
           : inflammatoryIndex // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       totalCO2Emissions: freezed == totalCO2Emissions
           ? _value.totalCO2Emissions
           : totalCO2Emissions // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       totalWeight: freezed == totalWeight
           ? _value.totalWeight
           : totalWeight // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       cuisineType: freezed == cuisineType
           ? _value._cuisineType
           : cuisineType // ignore: cast_nullable_to_non_nullable
@@ -452,7 +452,7 @@ class _$RecipeImpl implements _Recipe {
       final List<String>? healthLabels,
       final List<String>? cautions,
       final List<String>? ingredientLines,
-      final List<String>? ingredients,
+      final List<Ingredient>? ingredients,
       this.calories,
       this.glycemicIndex,
       this.inflammatoryIndex,
@@ -493,7 +493,7 @@ class _$RecipeImpl implements _Recipe {
   @override
   final String? shareAs;
   @override
-  final String? yield;
+  final num? yield;
   final List<String>? _dietLabels;
   @override
   List<String>? get dietLabels {
@@ -534,9 +534,9 @@ class _$RecipeImpl implements _Recipe {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<String>? _ingredients;
+  final List<Ingredient>? _ingredients;
   @override
-  List<String>? get ingredients {
+  List<Ingredient>? get ingredients {
     final value = _ingredients;
     if (value == null) return null;
     if (_ingredients is EqualUnmodifiableListView) return _ingredients;
@@ -545,15 +545,15 @@ class _$RecipeImpl implements _Recipe {
   }
 
   @override
-  final int? calories;
+  final num? calories;
   @override
-  final int? glycemicIndex;
+  final num? glycemicIndex;
   @override
-  final int? inflammatoryIndex;
+  final num? inflammatoryIndex;
   @override
-  final int? totalCO2Emissions;
+  final num? totalCO2Emissions;
   @override
-  final int? totalWeight;
+  final num? totalWeight;
   final List<String>? _cuisineType;
   @override
   List<String>? get cuisineType {
@@ -715,17 +715,17 @@ abstract class _Recipe implements Recipe {
       final String? source,
       final String? url,
       final String? shareAs,
-      final String? yield,
+      final num? yield,
       final List<String>? dietLabels,
       final List<String>? healthLabels,
       final List<String>? cautions,
       final List<String>? ingredientLines,
-      final List<String>? ingredients,
-      final int? calories,
-      final int? glycemicIndex,
-      final int? inflammatoryIndex,
-      final int? totalCO2Emissions,
-      final int? totalWeight,
+      final List<Ingredient>? ingredients,
+      final num? calories,
+      final num? glycemicIndex,
+      final num? inflammatoryIndex,
+      final num? totalCO2Emissions,
+      final num? totalWeight,
       final List<String>? cuisineType,
       final List<String>? mealType,
       final List<String>? dishType,
@@ -750,7 +750,7 @@ abstract class _Recipe implements Recipe {
   @override
   String? get shareAs;
   @override
-  String? get yield;
+  num? get yield;
   @override
   List<String>? get dietLabels;
   @override
@@ -760,17 +760,17 @@ abstract class _Recipe implements Recipe {
   @override
   List<String>? get ingredientLines;
   @override
-  List<String>? get ingredients;
+  List<Ingredient>? get ingredients;
   @override
-  int? get calories;
+  num? get calories;
   @override
-  int? get glycemicIndex;
+  num? get glycemicIndex;
   @override
-  int? get inflammatoryIndex;
+  num? get inflammatoryIndex;
   @override
-  int? get totalCO2Emissions;
+  num? get totalCO2Emissions;
   @override
-  int? get totalWeight;
+  num? get totalWeight;
   @override
   List<String>? get cuisineType;
   @override

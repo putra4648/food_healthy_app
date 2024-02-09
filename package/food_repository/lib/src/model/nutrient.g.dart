@@ -9,7 +9,7 @@ part of 'nutrient.dart';
 _$NutrientImpl _$$NutrientImplFromJson(Map<String, dynamic> json) =>
     _$NutrientImpl(
       label: json['label'] as String?,
-      quantity: json['quantity'] as int?,
+      quantity: json['quantity'] as num?,
       unit: json['unit'] as String?,
     );
 

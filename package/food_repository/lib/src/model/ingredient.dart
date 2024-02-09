@@ -9,10 +9,10 @@ class Ingredient with _$Ingredient {
   /// Public method for any getter & setter
   const factory Ingredient({
     String? text,
-    int? quantity,
+    num? quantity,
     String? measure,
     String? food,
-    int? weight,
+    num? weight,
     String? foodId,
   }) = _Ingredient;
 

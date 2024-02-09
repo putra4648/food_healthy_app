@@ -13,7 +13,7 @@ class Digest with _$Digest {
     String? schemaOrgTag,
     String? total,
     bool? hasRDI,
-    int? daily,
+    num? daily,
     String? unit,
   }) = _Digest;
 
