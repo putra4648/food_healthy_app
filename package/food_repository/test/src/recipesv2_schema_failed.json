@@ -1,0 +1,7 @@
+[
+  {
+    "errorCode": "string",
+    "message": "string",
+    "params": ["string"]
+  }
+]
