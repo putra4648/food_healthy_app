@@ -15,20 +15,64 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 SearchResponse _$SearchResponseFromJson(Map<String, dynamic> json) {
-  return _SearchResponse.fromJson(json);
+  switch (json['runtimeType']) {
+    case 'data':
+      return _SearchResponseData.fromJson(json);
+    case 'error':
+      return _SearchResponseError.fromJson(json);
+
+    default:
+      throw CheckedFromJsonException(json, 'runtimeType', 'SearchResponse',
+          'Invalid union type "${json['runtimeType']}"!');
+  }
 }
 
 /// @nodoc
 mixin _$SearchResponse {
-  int? get from => throw _privateConstructorUsedError;
-  int? get to => throw _privateConstructorUsedError;
-  int? get count => throw _privateConstructorUsedError;
-  List<Hit>? get hits => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $SearchResponseCopyWith<SearchResponse> get copyWith =>
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int? from, int? to, int? count, List<Hit>? hits)
+        data,
+    required TResult Function(
+            String? errorCode, String? message, List<String>? params)
+        error,
+  }) =>
       throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int? from, int? to, int? count, List<Hit>? hits)? data,
+    TResult? Function(String? errorCode, String? message, List<String>? params)?
+        error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int? from, int? to, int? count, List<Hit>? hits)? data,
+    TResult Function(String? errorCode, String? message, List<String>? params)?
+        error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SearchResponseData value) data,
+    required TResult Function(_SearchResponseError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SearchResponseData value)? data,
+    TResult? Function(_SearchResponseError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SearchResponseData value)? data,
+    TResult Function(_SearchResponseError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -36,8 +80,6 @@ abstract class $SearchResponseCopyWith<$Res> {
   factory $SearchResponseCopyWith(
           SearchResponse value, $Res Function(SearchResponse) then) =
       _$SearchResponseCopyWithImpl<$Res, SearchResponse>;
-  @useResult
-  $Res call({int? from, int? to, int? count, List<Hit>? hits});
 }
 
 /// @nodoc
@@ -49,53 +91,23 @@ class _$SearchResponseCopyWithImpl<$Res, $Val extends SearchResponse>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? from = freezed,
-    Object? to = freezed,
-    Object? count = freezed,
-    Object? hits = freezed,
-  }) {
-    return _then(_value.copyWith(
-      from: freezed == from
-          ? _value.from
-          : from // ignore: cast_nullable_to_non_nullable
-              as int?,
-      to: freezed == to
-          ? _value.to
-          : to // ignore: cast_nullable_to_non_nullable
-              as int?,
-      count: freezed == count
-          ? _value.count
-          : count // ignore: cast_nullable_to_non_nullable
-              as int?,
-      hits: freezed == hits
-          ? _value.hits
-          : hits // ignore: cast_nullable_to_non_nullable
-              as List<Hit>?,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$SearchResponseImplCopyWith<$Res>
-    implements $SearchResponseCopyWith<$Res> {
-  factory _$$SearchResponseImplCopyWith(_$SearchResponseImpl value,
-          $Res Function(_$SearchResponseImpl) then) =
-      __$$SearchResponseImplCopyWithImpl<$Res>;
-  @override
+abstract class _$$SearchResponseDataImplCopyWith<$Res> {
+  factory _$$SearchResponseDataImplCopyWith(_$SearchResponseDataImpl value,
+          $Res Function(_$SearchResponseDataImpl) then) =
+      __$$SearchResponseDataImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int? from, int? to, int? count, List<Hit>? hits});
 }
 
 /// @nodoc
-class __$$SearchResponseImplCopyWithImpl<$Res>
-    extends _$SearchResponseCopyWithImpl<$Res, _$SearchResponseImpl>
-    implements _$$SearchResponseImplCopyWith<$Res> {
-  __$$SearchResponseImplCopyWithImpl(
-      _$SearchResponseImpl _value, $Res Function(_$SearchResponseImpl) _then)
+class __$$SearchResponseDataImplCopyWithImpl<$Res>
+    extends _$SearchResponseCopyWithImpl<$Res, _$SearchResponseDataImpl>
+    implements _$$SearchResponseDataImplCopyWith<$Res> {
+  __$$SearchResponseDataImplCopyWithImpl(_$SearchResponseDataImpl _value,
+      $Res Function(_$SearchResponseDataImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -106,7 +118,7 @@ class __$$SearchResponseImplCopyWithImpl<$Res>
     Object? count = freezed,
     Object? hits = freezed,
   }) {
-    return _then(_$SearchResponseImpl(
+    return _then(_$SearchResponseDataImpl(
       from: freezed == from
           ? _value.from
           : from // ignore: cast_nullable_to_non_nullable
@@ -129,13 +141,18 @@ class __$$SearchResponseImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SearchResponseImpl implements _SearchResponse {
-  const _$SearchResponseImpl(
-      {this.from, this.to, this.count, final List<Hit>? hits})
-      : _hits = hits;
+class _$SearchResponseDataImpl implements _SearchResponseData {
+  const _$SearchResponseDataImpl(
+      {this.from,
+      this.to,
+      this.count,
+      final List<Hit>? hits,
+      final String? $type})
+      : _hits = hits,
+        $type = $type ?? 'data';
 
-  factory _$SearchResponseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SearchResponseImplFromJson(json);
+  factory _$SearchResponseDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SearchResponseDataImplFromJson(json);
 
   @override
   final int? from;
@@ -153,16 +170,19 @@ class _$SearchResponseImpl implements _SearchResponse {
     return EqualUnmodifiableListView(value);
   }
 
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
   @override
   String toString() {
-    return 'SearchResponse(from: $from, to: $to, count: $count, hits: $hits)';
+    return 'SearchResponse.data(from: $from, to: $to, count: $count, hits: $hits)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SearchResponseImpl &&
+            other is _$SearchResponseDataImpl &&
             (identical(other.from, from) || other.from == from) &&
             (identical(other.to, to) || other.to == to) &&
             (identical(other.count, count) || other.count == count) &&
@@ -177,38 +197,292 @@ class _$SearchResponseImpl implements _SearchResponse {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SearchResponseImplCopyWith<_$SearchResponseImpl> get copyWith =>
-      __$$SearchResponseImplCopyWithImpl<_$SearchResponseImpl>(
+  _$$SearchResponseDataImplCopyWith<_$SearchResponseDataImpl> get copyWith =>
+      __$$SearchResponseDataImplCopyWithImpl<_$SearchResponseDataImpl>(
           this, _$identity);
 
   @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int? from, int? to, int? count, List<Hit>? hits)
+        data,
+    required TResult Function(
+            String? errorCode, String? message, List<String>? params)
+        error,
+  }) {
+    return data(from, to, count, hits);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int? from, int? to, int? count, List<Hit>? hits)? data,
+    TResult? Function(String? errorCode, String? message, List<String>? params)?
+        error,
+  }) {
+    return data?.call(from, to, count, hits);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int? from, int? to, int? count, List<Hit>? hits)? data,
+    TResult Function(String? errorCode, String? message, List<String>? params)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (data != null) {
+      return data(from, to, count, hits);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SearchResponseData value) data,
+    required TResult Function(_SearchResponseError value) error,
+  }) {
+    return data(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SearchResponseData value)? data,
+    TResult? Function(_SearchResponseError value)? error,
+  }) {
+    return data?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SearchResponseData value)? data,
+    TResult Function(_SearchResponseError value)? error,
+    required TResult orElse(),
+  }) {
+    if (data != null) {
+      return data(this);
+    }
+    return orElse();
+  }
+
+  @override
   Map<String, dynamic> toJson() {
-    return _$$SearchResponseImplToJson(
+    return _$$SearchResponseDataImplToJson(
       this,
     );
   }
 }
 
-abstract class _SearchResponse implements SearchResponse {
-  const factory _SearchResponse(
+abstract class _SearchResponseData implements SearchResponse {
+  const factory _SearchResponseData(
       {final int? from,
       final int? to,
       final int? count,
-      final List<Hit>? hits}) = _$SearchResponseImpl;
+      final List<Hit>? hits}) = _$SearchResponseDataImpl;
 
-  factory _SearchResponse.fromJson(Map<String, dynamic> json) =
-      _$SearchResponseImpl.fromJson;
+  factory _SearchResponseData.fromJson(Map<String, dynamic> json) =
+      _$SearchResponseDataImpl.fromJson;
 
-  @override
   int? get from;
-  @override
   int? get to;
-  @override
   int? get count;
-  @override
   List<Hit>? get hits;
-  @override
   @JsonKey(ignore: true)
-  _$$SearchResponseImplCopyWith<_$SearchResponseImpl> get copyWith =>
+  _$$SearchResponseDataImplCopyWith<_$SearchResponseDataImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SearchResponseErrorImplCopyWith<$Res> {
+  factory _$$SearchResponseErrorImplCopyWith(_$SearchResponseErrorImpl value,
+          $Res Function(_$SearchResponseErrorImpl) then) =
+      __$$SearchResponseErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String? errorCode, String? message, List<String>? params});
+}
+
+/// @nodoc
+class __$$SearchResponseErrorImplCopyWithImpl<$Res>
+    extends _$SearchResponseCopyWithImpl<$Res, _$SearchResponseErrorImpl>
+    implements _$$SearchResponseErrorImplCopyWith<$Res> {
+  __$$SearchResponseErrorImplCopyWithImpl(_$SearchResponseErrorImpl _value,
+      $Res Function(_$SearchResponseErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? errorCode = freezed,
+    Object? message = freezed,
+    Object? params = freezed,
+  }) {
+    return _then(_$SearchResponseErrorImpl(
+      errorCode: freezed == errorCode
+          ? _value.errorCode
+          : errorCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      params: freezed == params
+          ? _value._params
+          : params // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$SearchResponseErrorImpl implements _SearchResponseError {
+  const _$SearchResponseErrorImpl(
+      {this.errorCode,
+      this.message,
+      final List<String>? params,
+      final String? $type})
+      : _params = params,
+        $type = $type ?? 'error';
+
+  factory _$SearchResponseErrorImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SearchResponseErrorImplFromJson(json);
+
+  @override
+  final String? errorCode;
+  @override
+  final String? message;
+  final List<String>? _params;
+  @override
+  List<String>? get params {
+    final value = _params;
+    if (value == null) return null;
+    if (_params is EqualUnmodifiableListView) return _params;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'SearchResponse.error(errorCode: $errorCode, message: $message, params: $params)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SearchResponseErrorImpl &&
+            (identical(other.errorCode, errorCode) ||
+                other.errorCode == errorCode) &&
+            (identical(other.message, message) || other.message == message) &&
+            const DeepCollectionEquality().equals(other._params, _params));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, errorCode, message,
+      const DeepCollectionEquality().hash(_params));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SearchResponseErrorImplCopyWith<_$SearchResponseErrorImpl> get copyWith =>
+      __$$SearchResponseErrorImplCopyWithImpl<_$SearchResponseErrorImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int? from, int? to, int? count, List<Hit>? hits)
+        data,
+    required TResult Function(
+            String? errorCode, String? message, List<String>? params)
+        error,
+  }) {
+    return error(errorCode, message, params);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int? from, int? to, int? count, List<Hit>? hits)? data,
+    TResult? Function(String? errorCode, String? message, List<String>? params)?
+        error,
+  }) {
+    return error?.call(errorCode, message, params);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int? from, int? to, int? count, List<Hit>? hits)? data,
+    TResult Function(String? errorCode, String? message, List<String>? params)?
+        error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(errorCode, message, params);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SearchResponseData value) data,
+    required TResult Function(_SearchResponseError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SearchResponseData value)? data,
+    TResult? Function(_SearchResponseError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SearchResponseData value)? data,
+    TResult Function(_SearchResponseError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SearchResponseErrorImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _SearchResponseError implements SearchResponse {
+  const factory _SearchResponseError(
+      {final String? errorCode,
+      final String? message,
+      final List<String>? params}) = _$SearchResponseErrorImpl;
+
+  factory _SearchResponseError.fromJson(Map<String, dynamic> json) =
+      _$SearchResponseErrorImpl.fromJson;
+
+  String? get errorCode;
+  String? get message;
+  List<String>? get params;
+  @JsonKey(ignore: true)
+  _$$SearchResponseErrorImplCopyWith<_$SearchResponseErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

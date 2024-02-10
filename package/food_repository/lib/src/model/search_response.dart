@@ -8,13 +8,25 @@ part 'search_response.g.dart';
 @freezed
 class SearchResponse with _$SearchResponse {
   /// Public method for any getter & setter
-  const factory SearchResponse({
+  const factory SearchResponse.data({
     int? from,
     int? to,
     int? count,
     List<Hit>? hits,
-  }) = _SearchResponse;
+  }) = _SearchResponseData;
 
+  /// Public method for handle error data
+  const factory SearchResponse.error({
+    String? errorCode,
+    String? message,
+    List<String>? params,
+  }) = _SearchResponseError;
+
+  /// Public method for receiving JSON data if success
   factory SearchResponse.fromJson(Map<String, Object?> json) =>
-      _$SearchResponseFromJson(json);
+      _SearchResponseData.fromJson(json);
+
+  /// Public method for receiving JSON data if error
+  factory SearchResponse.fromJsonError(Map<String, Object?> json) =>
+      _SearchResponseError.fromJson(json);
 }
