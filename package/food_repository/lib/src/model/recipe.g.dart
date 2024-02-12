@@ -33,7 +33,9 @@ _$RecipeImpl _$$RecipeImplFromJson(Map<String, dynamic> json) => _$RecipeImpl(
       glycemicIndex: json['glycemicIndex'] as num?,
       inflammatoryIndex: json['inflammatoryIndex'] as num?,
       totalCO2Emissions: json['totalCO2Emissions'] as num?,
+      co2EmissionsClass: json['co2EmissionsClass'] as String?,
       totalWeight: json['totalWeight'] as num?,
+      totalTime: json['totalTime'] as num?,
       cuisineType: (json['cuisineType'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -54,6 +56,9 @@ _$RecipeImpl _$$RecipeImplFromJson(Map<String, dynamic> json) => _$RecipeImpl(
       totalDaily: json['totalDaily'] == null
           ? null
           : Nutrient.fromJson(json['totalDaily'] as Map<String, dynamic>),
+      digests: (json['digest'] as List<dynamic>?)
+          ?.map((e) => Digest.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$RecipeImplToJson(_$RecipeImpl instance) =>
@@ -74,7 +79,9 @@ Map<String, dynamic> _$$RecipeImplToJson(_$RecipeImpl instance) =>
       'glycemicIndex': instance.glycemicIndex,
       'inflammatoryIndex': instance.inflammatoryIndex,
       'totalCO2Emissions': instance.totalCO2Emissions,
+      'co2EmissionsClass': instance.co2EmissionsClass,
       'totalWeight': instance.totalWeight,
+      'totalTime': instance.totalTime,
       'cuisineType': instance.cuisineType,
       'mealType': instance.mealType,
       'dishType': instance.dishType,
@@ -83,4 +90,5 @@ Map<String, dynamic> _$$RecipeImplToJson(_$RecipeImpl instance) =>
       'externalId': instance.externalId,
       'totalNutrients': instance.totalNutrients,
       'totalDaily': instance.totalDaily,
+      'digest': instance.digests,
     };

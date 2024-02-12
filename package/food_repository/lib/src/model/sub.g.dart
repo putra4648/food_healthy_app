@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'digest.dart';
+part of 'sub.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$DigestImpl _$$DigestImplFromJson(Map<String, dynamic> json) => _$DigestImpl(
+_$SubImpl _$$SubImplFromJson(Map<String, dynamic> json) => _$SubImpl(
       label: json['label'] as String?,
       tag: json['tag'] as String?,
       schemaOrgTag: json['schemaOrgTag'] as String?,
@@ -16,8 +16,7 @@ _$DigestImpl _$$DigestImplFromJson(Map<String, dynamic> json) => _$DigestImpl(
       unit: json['unit'] as String?,
     );
 
-Map<String, dynamic> _$$DigestImplToJson(_$DigestImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$SubImplToJson(_$SubImpl instance) => <String, dynamic>{
       'label': instance.label,
       'tag': instance.tag,
       'schemaOrgTag': instance.schemaOrgTag,

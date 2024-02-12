@@ -36,7 +36,9 @@ mixin _$Recipe {
   num? get glycemicIndex => throw _privateConstructorUsedError;
   num? get inflammatoryIndex => throw _privateConstructorUsedError;
   num? get totalCO2Emissions => throw _privateConstructorUsedError;
+  String? get co2EmissionsClass => throw _privateConstructorUsedError;
   num? get totalWeight => throw _privateConstructorUsedError;
+  num? get totalTime => throw _privateConstructorUsedError;
   List<String>? get cuisineType => throw _privateConstructorUsedError;
   List<String>? get mealType => throw _privateConstructorUsedError;
   List<String>? get dishType => throw _privateConstructorUsedError;
@@ -45,6 +47,8 @@ mixin _$Recipe {
   String? get externalId => throw _privateConstructorUsedError;
   Nutrient? get totalNutrients => throw _privateConstructorUsedError;
   Nutrient? get totalDaily => throw _privateConstructorUsedError;
+  @JsonKey(name: 'digest')
+  List<Digest>? get digests => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -73,7 +77,9 @@ abstract class $RecipeCopyWith<$Res> {
       num? glycemicIndex,
       num? inflammatoryIndex,
       num? totalCO2Emissions,
+      String? co2EmissionsClass,
       num? totalWeight,
+      num? totalTime,
       List<String>? cuisineType,
       List<String>? mealType,
       List<String>? dishType,
@@ -81,7 +87,8 @@ abstract class $RecipeCopyWith<$Res> {
       List<String>? tags,
       String? externalId,
       Nutrient? totalNutrients,
-      Nutrient? totalDaily});
+      Nutrient? totalDaily,
+      @JsonKey(name: 'digest') List<Digest>? digests});
 
   $NutrientCopyWith<$Res>? get totalNutrients;
   $NutrientCopyWith<$Res>? get totalDaily;
@@ -116,7 +123,9 @@ class _$RecipeCopyWithImpl<$Res, $Val extends Recipe>
     Object? glycemicIndex = freezed,
     Object? inflammatoryIndex = freezed,
     Object? totalCO2Emissions = freezed,
+    Object? co2EmissionsClass = freezed,
     Object? totalWeight = freezed,
+    Object? totalTime = freezed,
     Object? cuisineType = freezed,
     Object? mealType = freezed,
     Object? dishType = freezed,
@@ -125,6 +134,7 @@ class _$RecipeCopyWithImpl<$Res, $Val extends Recipe>
     Object? externalId = freezed,
     Object? totalNutrients = freezed,
     Object? totalDaily = freezed,
+    Object? digests = freezed,
   }) {
     return _then(_value.copyWith(
       uri: freezed == uri
@@ -191,9 +201,17 @@ class _$RecipeCopyWithImpl<$Res, $Val extends Recipe>
           ? _value.totalCO2Emissions
           : totalCO2Emissions // ignore: cast_nullable_to_non_nullable
               as num?,
+      co2EmissionsClass: freezed == co2EmissionsClass
+          ? _value.co2EmissionsClass
+          : co2EmissionsClass // ignore: cast_nullable_to_non_nullable
+              as String?,
       totalWeight: freezed == totalWeight
           ? _value.totalWeight
           : totalWeight // ignore: cast_nullable_to_non_nullable
+              as num?,
+      totalTime: freezed == totalTime
+          ? _value.totalTime
+          : totalTime // ignore: cast_nullable_to_non_nullable
               as num?,
       cuisineType: freezed == cuisineType
           ? _value.cuisineType
@@ -227,6 +245,10 @@ class _$RecipeCopyWithImpl<$Res, $Val extends Recipe>
           ? _value.totalDaily
           : totalDaily // ignore: cast_nullable_to_non_nullable
               as Nutrient?,
+      digests: freezed == digests
+          ? _value.digests
+          : digests // ignore: cast_nullable_to_non_nullable
+              as List<Digest>?,
     ) as $Val);
   }
 
@@ -279,7 +301,9 @@ abstract class _$$RecipeImplCopyWith<$Res> implements $RecipeCopyWith<$Res> {
       num? glycemicIndex,
       num? inflammatoryIndex,
       num? totalCO2Emissions,
+      String? co2EmissionsClass,
       num? totalWeight,
+      num? totalTime,
       List<String>? cuisineType,
       List<String>? mealType,
       List<String>? dishType,
@@ -287,7 +311,8 @@ abstract class _$$RecipeImplCopyWith<$Res> implements $RecipeCopyWith<$Res> {
       List<String>? tags,
       String? externalId,
       Nutrient? totalNutrients,
-      Nutrient? totalDaily});
+      Nutrient? totalDaily,
+      @JsonKey(name: 'digest') List<Digest>? digests});
 
   @override
   $NutrientCopyWith<$Res>? get totalNutrients;
@@ -322,7 +347,9 @@ class __$$RecipeImplCopyWithImpl<$Res>
     Object? glycemicIndex = freezed,
     Object? inflammatoryIndex = freezed,
     Object? totalCO2Emissions = freezed,
+    Object? co2EmissionsClass = freezed,
     Object? totalWeight = freezed,
+    Object? totalTime = freezed,
     Object? cuisineType = freezed,
     Object? mealType = freezed,
     Object? dishType = freezed,
@@ -331,6 +358,7 @@ class __$$RecipeImplCopyWithImpl<$Res>
     Object? externalId = freezed,
     Object? totalNutrients = freezed,
     Object? totalDaily = freezed,
+    Object? digests = freezed,
   }) {
     return _then(_$RecipeImpl(
       uri: freezed == uri
@@ -397,9 +425,17 @@ class __$$RecipeImplCopyWithImpl<$Res>
           ? _value.totalCO2Emissions
           : totalCO2Emissions // ignore: cast_nullable_to_non_nullable
               as num?,
+      co2EmissionsClass: freezed == co2EmissionsClass
+          ? _value.co2EmissionsClass
+          : co2EmissionsClass // ignore: cast_nullable_to_non_nullable
+              as String?,
       totalWeight: freezed == totalWeight
           ? _value.totalWeight
           : totalWeight // ignore: cast_nullable_to_non_nullable
+              as num?,
+      totalTime: freezed == totalTime
+          ? _value.totalTime
+          : totalTime // ignore: cast_nullable_to_non_nullable
               as num?,
       cuisineType: freezed == cuisineType
           ? _value._cuisineType
@@ -433,6 +469,10 @@ class __$$RecipeImplCopyWithImpl<$Res>
           ? _value.totalDaily
           : totalDaily // ignore: cast_nullable_to_non_nullable
               as Nutrient?,
+      digests: freezed == digests
+          ? _value._digests
+          : digests // ignore: cast_nullable_to_non_nullable
+              as List<Digest>?,
     ));
   }
 }
@@ -457,7 +497,9 @@ class _$RecipeImpl implements _Recipe {
       this.glycemicIndex,
       this.inflammatoryIndex,
       this.totalCO2Emissions,
+      this.co2EmissionsClass,
       this.totalWeight,
+      this.totalTime,
       final List<String>? cuisineType,
       final List<String>? mealType,
       final List<String>? dishType,
@@ -465,7 +507,8 @@ class _$RecipeImpl implements _Recipe {
       final List<String>? tags,
       this.externalId,
       this.totalNutrients,
-      this.totalDaily})
+      this.totalDaily,
+      @JsonKey(name: 'digest') final List<Digest>? digests})
       : _dietLabels = dietLabels,
         _healthLabels = healthLabels,
         _cautions = cautions,
@@ -475,7 +518,8 @@ class _$RecipeImpl implements _Recipe {
         _mealType = mealType,
         _dishType = dishType,
         _instructions = instructions,
-        _tags = tags;
+        _tags = tags,
+        _digests = digests;
 
   factory _$RecipeImpl.fromJson(Map<String, dynamic> json) =>
       _$$RecipeImplFromJson(json);
@@ -553,7 +597,11 @@ class _$RecipeImpl implements _Recipe {
   @override
   final num? totalCO2Emissions;
   @override
+  final String? co2EmissionsClass;
+  @override
   final num? totalWeight;
+  @override
+  final num? totalTime;
   final List<String>? _cuisineType;
   @override
   List<String>? get cuisineType {
@@ -610,10 +658,20 @@ class _$RecipeImpl implements _Recipe {
   final Nutrient? totalNutrients;
   @override
   final Nutrient? totalDaily;
+  final List<Digest>? _digests;
+  @override
+  @JsonKey(name: 'digest')
+  List<Digest>? get digests {
+    final value = _digests;
+    if (value == null) return null;
+    if (_digests is EqualUnmodifiableListView) return _digests;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
-    return 'Recipe(uri: $uri, label: $label, image: $image, source: $source, url: $url, shareAs: $shareAs, yield: $yield, dietLabels: $dietLabels, healthLabels: $healthLabels, cautions: $cautions, ingredientLines: $ingredientLines, ingredients: $ingredients, calories: $calories, glycemicIndex: $glycemicIndex, inflammatoryIndex: $inflammatoryIndex, totalCO2Emissions: $totalCO2Emissions, totalWeight: $totalWeight, cuisineType: $cuisineType, mealType: $mealType, dishType: $dishType, instructions: $instructions, tags: $tags, externalId: $externalId, totalNutrients: $totalNutrients, totalDaily: $totalDaily)';
+    return 'Recipe(uri: $uri, label: $label, image: $image, source: $source, url: $url, shareAs: $shareAs, yield: $yield, dietLabels: $dietLabels, healthLabels: $healthLabels, cautions: $cautions, ingredientLines: $ingredientLines, ingredients: $ingredients, calories: $calories, glycemicIndex: $glycemicIndex, inflammatoryIndex: $inflammatoryIndex, totalCO2Emissions: $totalCO2Emissions, co2EmissionsClass: $co2EmissionsClass, totalWeight: $totalWeight, totalTime: $totalTime, cuisineType: $cuisineType, mealType: $mealType, dishType: $dishType, instructions: $instructions, tags: $tags, externalId: $externalId, totalNutrients: $totalNutrients, totalDaily: $totalDaily, digests: $digests)';
   }
 
   @override
@@ -645,8 +703,12 @@ class _$RecipeImpl implements _Recipe {
                 other.inflammatoryIndex == inflammatoryIndex) &&
             (identical(other.totalCO2Emissions, totalCO2Emissions) ||
                 other.totalCO2Emissions == totalCO2Emissions) &&
+            (identical(other.co2EmissionsClass, co2EmissionsClass) ||
+                other.co2EmissionsClass == co2EmissionsClass) &&
             (identical(other.totalWeight, totalWeight) ||
                 other.totalWeight == totalWeight) &&
+            (identical(other.totalTime, totalTime) ||
+                other.totalTime == totalTime) &&
             const DeepCollectionEquality()
                 .equals(other._cuisineType, _cuisineType) &&
             const DeepCollectionEquality().equals(other._mealType, _mealType) &&
@@ -659,7 +721,8 @@ class _$RecipeImpl implements _Recipe {
             (identical(other.totalNutrients, totalNutrients) ||
                 other.totalNutrients == totalNutrients) &&
             (identical(other.totalDaily, totalDaily) ||
-                other.totalDaily == totalDaily));
+                other.totalDaily == totalDaily) &&
+            const DeepCollectionEquality().equals(other._digests, _digests));
   }
 
   @JsonKey(ignore: true)
@@ -682,7 +745,9 @@ class _$RecipeImpl implements _Recipe {
         glycemicIndex,
         inflammatoryIndex,
         totalCO2Emissions,
+        co2EmissionsClass,
         totalWeight,
+        totalTime,
         const DeepCollectionEquality().hash(_cuisineType),
         const DeepCollectionEquality().hash(_mealType),
         const DeepCollectionEquality().hash(_dishType),
@@ -690,7 +755,8 @@ class _$RecipeImpl implements _Recipe {
         const DeepCollectionEquality().hash(_tags),
         externalId,
         totalNutrients,
-        totalDaily
+        totalDaily,
+        const DeepCollectionEquality().hash(_digests)
       ]);
 
   @JsonKey(ignore: true)
@@ -725,7 +791,9 @@ abstract class _Recipe implements Recipe {
       final num? glycemicIndex,
       final num? inflammatoryIndex,
       final num? totalCO2Emissions,
+      final String? co2EmissionsClass,
       final num? totalWeight,
+      final num? totalTime,
       final List<String>? cuisineType,
       final List<String>? mealType,
       final List<String>? dishType,
@@ -733,7 +801,8 @@ abstract class _Recipe implements Recipe {
       final List<String>? tags,
       final String? externalId,
       final Nutrient? totalNutrients,
-      final Nutrient? totalDaily}) = _$RecipeImpl;
+      final Nutrient? totalDaily,
+      @JsonKey(name: 'digest') final List<Digest>? digests}) = _$RecipeImpl;
 
   factory _Recipe.fromJson(Map<String, dynamic> json) = _$RecipeImpl.fromJson;
 
@@ -770,7 +839,11 @@ abstract class _Recipe implements Recipe {
   @override
   num? get totalCO2Emissions;
   @override
+  String? get co2EmissionsClass;
+  @override
   num? get totalWeight;
+  @override
+  num? get totalTime;
   @override
   List<String>? get cuisineType;
   @override
@@ -787,6 +860,9 @@ abstract class _Recipe implements Recipe {
   Nutrient? get totalNutrients;
   @override
   Nutrient? get totalDaily;
+  @override
+  @JsonKey(name: 'digest')
+  List<Digest>? get digests;
   @override
   @JsonKey(ignore: true)
   _$$RecipeImplCopyWith<_$RecipeImpl> get copyWith =>
