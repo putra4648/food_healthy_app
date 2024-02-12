@@ -4,9 +4,11 @@ import 'dart:io';
 import 'package:food_repository/src/model/search_response.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/testing.dart';
+import 'package:logger/logger.dart';
 import 'package:test/test.dart';
 
 void main() {
+  final log = Logger();
   final client = MockClient((request) async {
     if (request.url.host == 'example.com') {
       return http.Response(
@@ -24,12 +26,13 @@ void main() {
   });
 
   group('Mocking HTTP Client', () {
-    test('should return valid class model from JSON whern success', () async {
+    test('should return valid class model from JSON when success', () async {
       final response = await client.get(Uri.https('example.com'));
       final json = SearchResponse.fromJson(
         jsonDecode(response.body) as Map<String, Object?>,
       );
       expect(json, isA<SearchResponse>());
+      log.log(Level.info, json);
     });
 
     test('should return List<SearchResponse> when host is not same', () async {
@@ -40,6 +43,7 @@ void main() {
             .map(SearchResponse.fromJsonError)
             .toList();
         expect(json, isA<List<SearchResponse>>());
+        log.log(Level.info, json);
       }
     });
   });

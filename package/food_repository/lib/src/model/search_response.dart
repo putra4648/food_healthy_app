@@ -1,4 +1,5 @@
 import 'package:food_repository/src/model/hit.dart';
+import 'package:food_repository/src/model/links.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'search_response.freezed.dart';
@@ -12,6 +13,7 @@ class SearchResponse with _$SearchResponse {
     int? from,
     int? to,
     int? count,
+    @JsonKey(name: '_links') Links? links,
     List<Hit>? hits,
   }) = _SearchResponseData;
 

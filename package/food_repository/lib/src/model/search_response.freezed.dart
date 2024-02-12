@@ -31,7 +31,8 @@ SearchResponse _$SearchResponseFromJson(Map<String, dynamic> json) {
 mixin _$SearchResponse {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int? from, int? to, int? count, List<Hit>? hits)
+    required TResult Function(int? from, int? to, int? count,
+            @JsonKey(name: '_links') Links? links, List<Hit>? hits)
         data,
     required TResult Function(
             String? errorCode, String? message, List<String>? params)
@@ -40,14 +41,18 @@ mixin _$SearchResponse {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int? from, int? to, int? count, List<Hit>? hits)? data,
+    TResult? Function(int? from, int? to, int? count,
+            @JsonKey(name: '_links') Links? links, List<Hit>? hits)?
+        data,
     TResult? Function(String? errorCode, String? message, List<String>? params)?
         error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int? from, int? to, int? count, List<Hit>? hits)? data,
+    TResult Function(int? from, int? to, int? count,
+            @JsonKey(name: '_links') Links? links, List<Hit>? hits)?
+        data,
     TResult Function(String? errorCode, String? message, List<String>? params)?
         error,
     required TResult orElse(),
@@ -99,7 +104,14 @@ abstract class _$$SearchResponseDataImplCopyWith<$Res> {
           $Res Function(_$SearchResponseDataImpl) then) =
       __$$SearchResponseDataImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({int? from, int? to, int? count, List<Hit>? hits});
+  $Res call(
+      {int? from,
+      int? to,
+      int? count,
+      @JsonKey(name: '_links') Links? links,
+      List<Hit>? hits});
+
+  $LinksCopyWith<$Res>? get links;
 }
 
 /// @nodoc
@@ -116,6 +128,7 @@ class __$$SearchResponseDataImplCopyWithImpl<$Res>
     Object? from = freezed,
     Object? to = freezed,
     Object? count = freezed,
+    Object? links = freezed,
     Object? hits = freezed,
   }) {
     return _then(_$SearchResponseDataImpl(
@@ -131,11 +144,27 @@ class __$$SearchResponseDataImplCopyWithImpl<$Res>
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
               as int?,
+      links: freezed == links
+          ? _value.links
+          : links // ignore: cast_nullable_to_non_nullable
+              as Links?,
       hits: freezed == hits
           ? _value._hits
           : hits // ignore: cast_nullable_to_non_nullable
               as List<Hit>?,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $LinksCopyWith<$Res>? get links {
+    if (_value.links == null) {
+      return null;
+    }
+
+    return $LinksCopyWith<$Res>(_value.links!, (value) {
+      return _then(_value.copyWith(links: value));
+    });
   }
 }
 
@@ -146,6 +175,7 @@ class _$SearchResponseDataImpl implements _SearchResponseData {
       {this.from,
       this.to,
       this.count,
+      @JsonKey(name: '_links') this.links,
       final List<Hit>? hits,
       final String? $type})
       : _hits = hits,
@@ -160,6 +190,9 @@ class _$SearchResponseDataImpl implements _SearchResponseData {
   final int? to;
   @override
   final int? count;
+  @override
+  @JsonKey(name: '_links')
+  final Links? links;
   final List<Hit>? _hits;
   @override
   List<Hit>? get hits {
@@ -175,7 +208,7 @@ class _$SearchResponseDataImpl implements _SearchResponseData {
 
   @override
   String toString() {
-    return 'SearchResponse.data(from: $from, to: $to, count: $count, hits: $hits)';
+    return 'SearchResponse.data(from: $from, to: $to, count: $count, links: $links, hits: $hits)';
   }
 
   @override
@@ -186,13 +219,14 @@ class _$SearchResponseDataImpl implements _SearchResponseData {
             (identical(other.from, from) || other.from == from) &&
             (identical(other.to, to) || other.to == to) &&
             (identical(other.count, count) || other.count == count) &&
+            (identical(other.links, links) || other.links == links) &&
             const DeepCollectionEquality().equals(other._hits, _hits));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, from, to, count, const DeepCollectionEquality().hash(_hits));
+  int get hashCode => Object.hash(runtimeType, from, to, count, links,
+      const DeepCollectionEquality().hash(_hits));
 
   @JsonKey(ignore: true)
   @override
@@ -204,35 +238,40 @@ class _$SearchResponseDataImpl implements _SearchResponseData {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int? from, int? to, int? count, List<Hit>? hits)
+    required TResult Function(int? from, int? to, int? count,
+            @JsonKey(name: '_links') Links? links, List<Hit>? hits)
         data,
     required TResult Function(
             String? errorCode, String? message, List<String>? params)
         error,
   }) {
-    return data(from, to, count, hits);
+    return data(from, to, count, links, hits);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int? from, int? to, int? count, List<Hit>? hits)? data,
+    TResult? Function(int? from, int? to, int? count,
+            @JsonKey(name: '_links') Links? links, List<Hit>? hits)?
+        data,
     TResult? Function(String? errorCode, String? message, List<String>? params)?
         error,
   }) {
-    return data?.call(from, to, count, hits);
+    return data?.call(from, to, count, links, hits);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int? from, int? to, int? count, List<Hit>? hits)? data,
+    TResult Function(int? from, int? to, int? count,
+            @JsonKey(name: '_links') Links? links, List<Hit>? hits)?
+        data,
     TResult Function(String? errorCode, String? message, List<String>? params)?
         error,
     required TResult orElse(),
   }) {
     if (data != null) {
-      return data(from, to, count, hits);
+      return data(from, to, count, links, hits);
     }
     return orElse();
   }
@@ -281,6 +320,7 @@ abstract class _SearchResponseData implements SearchResponse {
       {final int? from,
       final int? to,
       final int? count,
+      @JsonKey(name: '_links') final Links? links,
       final List<Hit>? hits}) = _$SearchResponseDataImpl;
 
   factory _SearchResponseData.fromJson(Map<String, dynamic> json) =
@@ -289,6 +329,8 @@ abstract class _SearchResponseData implements SearchResponse {
   int? get from;
   int? get to;
   int? get count;
+  @JsonKey(name: '_links')
+  Links? get links;
   List<Hit>? get hits;
   @JsonKey(ignore: true)
   _$$SearchResponseDataImplCopyWith<_$SearchResponseDataImpl> get copyWith =>
@@ -398,7 +440,8 @@ class _$SearchResponseErrorImpl implements _SearchResponseError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int? from, int? to, int? count, List<Hit>? hits)
+    required TResult Function(int? from, int? to, int? count,
+            @JsonKey(name: '_links') Links? links, List<Hit>? hits)
         data,
     required TResult Function(
             String? errorCode, String? message, List<String>? params)
@@ -410,7 +453,9 @@ class _$SearchResponseErrorImpl implements _SearchResponseError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int? from, int? to, int? count, List<Hit>? hits)? data,
+    TResult? Function(int? from, int? to, int? count,
+            @JsonKey(name: '_links') Links? links, List<Hit>? hits)?
+        data,
     TResult? Function(String? errorCode, String? message, List<String>? params)?
         error,
   }) {
@@ -420,7 +465,9 @@ class _$SearchResponseErrorImpl implements _SearchResponseError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int? from, int? to, int? count, List<Hit>? hits)? data,
+    TResult Function(int? from, int? to, int? count,
+            @JsonKey(name: '_links') Links? links, List<Hit>? hits)?
+        data,
     TResult Function(String? errorCode, String? message, List<String>? params)?
         error,
     required TResult orElse(),
