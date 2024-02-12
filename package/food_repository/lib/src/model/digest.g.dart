@@ -14,6 +14,7 @@ _$DigestImpl _$$DigestImplFromJson(Map<String, dynamic> json) => _$DigestImpl(
       hasRDI: json['hasRDI'] as bool?,
       daily: json['daily'] as num?,
       unit: json['unit'] as String?,
+      subs: _parseSubFromJson(json['sub']),
     );
 
 Map<String, dynamic> _$$DigestImplToJson(_$DigestImpl instance) =>
@@ -25,4 +26,5 @@ Map<String, dynamic> _$$DigestImplToJson(_$DigestImpl instance) =>
       'hasRDI': instance.hasRDI,
       'daily': instance.daily,
       'unit': instance.unit,
+      'sub': instance.subs,
     };
