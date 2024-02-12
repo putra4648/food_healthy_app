@@ -1,3 +1,4 @@
+import 'package:food_repository/src/model/digest.dart';
 import 'package:food_repository/src/model/ingredient.dart';
 import 'package:food_repository/src/model/nutrient.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -26,7 +27,9 @@ class Recipe with _$Recipe {
     num? glycemicIndex,
     num? inflammatoryIndex,
     num? totalCO2Emissions,
+    String? co2EmissionsClass,
     num? totalWeight,
+    num? totalTime,
     List<String>? cuisineType,
     List<String>? mealType,
     List<String>? dishType,
@@ -35,6 +38,7 @@ class Recipe with _$Recipe {
     String? externalId,
     Nutrient? totalNutrients,
     Nutrient? totalDaily,
+    @JsonKey(name: 'digest') List<Digest>? digests,
   }) = _Recipe;
 
   /// Public method for receiving JSON data

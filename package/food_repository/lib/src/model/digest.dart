@@ -1,3 +1,4 @@
+import 'package:food_repository/src/model/sub.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'digest.freezed.dart';
@@ -11,10 +12,11 @@ class Digest with _$Digest {
     String? label,
     String? tag,
     String? schemaOrgTag,
-    String? total,
+    num? total,
     bool? hasRDI,
     num? daily,
     String? unit,
+    // @JsonKey(name: 'sub',) List<Sub>? subs,
   }) = _Digest;
 
   /// Public method for receiving JSON data
