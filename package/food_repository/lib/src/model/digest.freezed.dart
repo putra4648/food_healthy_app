@@ -27,6 +27,8 @@ mixin _$Digest {
   bool? get hasRDI => throw _privateConstructorUsedError;
   num? get daily => throw _privateConstructorUsedError;
   String? get unit => throw _privateConstructorUsedError;
+  @JsonKey(name: 'sub', fromJson: _parseSubFromJson)
+  List<Sub>? get subs => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,7 +47,8 @@ abstract class $DigestCopyWith<$Res> {
       num? total,
       bool? hasRDI,
       num? daily,
-      String? unit});
+      String? unit,
+      @JsonKey(name: 'sub', fromJson: _parseSubFromJson) List<Sub>? subs});
 }
 
 /// @nodoc
@@ -68,6 +71,7 @@ class _$DigestCopyWithImpl<$Res, $Val extends Digest>
     Object? hasRDI = freezed,
     Object? daily = freezed,
     Object? unit = freezed,
+    Object? subs = freezed,
   }) {
     return _then(_value.copyWith(
       label: freezed == label
@@ -98,6 +102,10 @@ class _$DigestCopyWithImpl<$Res, $Val extends Digest>
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
               as String?,
+      subs: freezed == subs
+          ? _value.subs
+          : subs // ignore: cast_nullable_to_non_nullable
+              as List<Sub>?,
     ) as $Val);
   }
 }
@@ -116,7 +124,8 @@ abstract class _$$DigestImplCopyWith<$Res> implements $DigestCopyWith<$Res> {
       num? total,
       bool? hasRDI,
       num? daily,
-      String? unit});
+      String? unit,
+      @JsonKey(name: 'sub', fromJson: _parseSubFromJson) List<Sub>? subs});
 }
 
 /// @nodoc
@@ -137,6 +146,7 @@ class __$$DigestImplCopyWithImpl<$Res>
     Object? hasRDI = freezed,
     Object? daily = freezed,
     Object? unit = freezed,
+    Object? subs = freezed,
   }) {
     return _then(_$DigestImpl(
       label: freezed == label
@@ -167,6 +177,10 @@ class __$$DigestImplCopyWithImpl<$Res>
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
               as String?,
+      subs: freezed == subs
+          ? _value._subs
+          : subs // ignore: cast_nullable_to_non_nullable
+              as List<Sub>?,
     ));
   }
 }
@@ -181,7 +195,9 @@ class _$DigestImpl implements _Digest {
       this.total,
       this.hasRDI,
       this.daily,
-      this.unit});
+      this.unit,
+      @JsonKey(name: 'sub', fromJson: _parseSubFromJson) final List<Sub>? subs})
+      : _subs = subs;
 
   factory _$DigestImpl.fromJson(Map<String, dynamic> json) =>
       _$$DigestImplFromJson(json);
@@ -200,10 +216,20 @@ class _$DigestImpl implements _Digest {
   final num? daily;
   @override
   final String? unit;
+  final List<Sub>? _subs;
+  @override
+  @JsonKey(name: 'sub', fromJson: _parseSubFromJson)
+  List<Sub>? get subs {
+    final value = _subs;
+    if (value == null) return null;
+    if (_subs is EqualUnmodifiableListView) return _subs;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
-    return 'Digest(label: $label, tag: $tag, schemaOrgTag: $schemaOrgTag, total: $total, hasRDI: $hasRDI, daily: $daily, unit: $unit)';
+    return 'Digest(label: $label, tag: $tag, schemaOrgTag: $schemaOrgTag, total: $total, hasRDI: $hasRDI, daily: $daily, unit: $unit, subs: $subs)';
   }
 
   @override
@@ -218,13 +244,14 @@ class _$DigestImpl implements _Digest {
             (identical(other.total, total) || other.total == total) &&
             (identical(other.hasRDI, hasRDI) || other.hasRDI == hasRDI) &&
             (identical(other.daily, daily) || other.daily == daily) &&
-            (identical(other.unit, unit) || other.unit == unit));
+            (identical(other.unit, unit) || other.unit == unit) &&
+            const DeepCollectionEquality().equals(other._subs, _subs));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, label, tag, schemaOrgTag, total, hasRDI, daily, unit);
+  int get hashCode => Object.hash(runtimeType, label, tag, schemaOrgTag, total,
+      hasRDI, daily, unit, const DeepCollectionEquality().hash(_subs));
 
   @JsonKey(ignore: true)
   @override
@@ -248,7 +275,9 @@ abstract class _Digest implements Digest {
       final num? total,
       final bool? hasRDI,
       final num? daily,
-      final String? unit}) = _$DigestImpl;
+      final String? unit,
+      @JsonKey(name: 'sub', fromJson: _parseSubFromJson)
+      final List<Sub>? subs}) = _$DigestImpl;
 
   factory _Digest.fromJson(Map<String, dynamic> json) = _$DigestImpl.fromJson;
 
@@ -266,6 +295,9 @@ abstract class _Digest implements Digest {
   num? get daily;
   @override
   String? get unit;
+  @override
+  @JsonKey(name: 'sub', fromJson: _parseSubFromJson)
+  List<Sub>? get subs;
   @override
   @JsonKey(ignore: true)
   _$$DigestImplCopyWith<_$DigestImpl> get copyWith =>

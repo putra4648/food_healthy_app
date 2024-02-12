@@ -45,7 +45,8 @@ mixin _$Recipe {
   List<String>? get instructions => throw _privateConstructorUsedError;
   List<String>? get tags => throw _privateConstructorUsedError;
   String? get externalId => throw _privateConstructorUsedError;
-  Nutrient? get totalNutrients => throw _privateConstructorUsedError;
+  @JsonKey(fromJson: _parseNutrientsFromJson)
+  List<Nutrient>? get totalNutrients => throw _privateConstructorUsedError;
   Nutrient? get totalDaily => throw _privateConstructorUsedError;
   @JsonKey(name: 'digest')
   List<Digest>? get digests => throw _privateConstructorUsedError;
@@ -86,11 +87,11 @@ abstract class $RecipeCopyWith<$Res> {
       List<String>? instructions,
       List<String>? tags,
       String? externalId,
-      Nutrient? totalNutrients,
+      @JsonKey(fromJson: _parseNutrientsFromJson)
+      List<Nutrient>? totalNutrients,
       Nutrient? totalDaily,
       @JsonKey(name: 'digest') List<Digest>? digests});
 
-  $NutrientCopyWith<$Res>? get totalNutrients;
   $NutrientCopyWith<$Res>? get totalDaily;
 }
 
@@ -240,7 +241,7 @@ class _$RecipeCopyWithImpl<$Res, $Val extends Recipe>
       totalNutrients: freezed == totalNutrients
           ? _value.totalNutrients
           : totalNutrients // ignore: cast_nullable_to_non_nullable
-              as Nutrient?,
+              as List<Nutrient>?,
       totalDaily: freezed == totalDaily
           ? _value.totalDaily
           : totalDaily // ignore: cast_nullable_to_non_nullable
@@ -250,18 +251,6 @@ class _$RecipeCopyWithImpl<$Res, $Val extends Recipe>
           : digests // ignore: cast_nullable_to_non_nullable
               as List<Digest>?,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $NutrientCopyWith<$Res>? get totalNutrients {
-    if (_value.totalNutrients == null) {
-      return null;
-    }
-
-    return $NutrientCopyWith<$Res>(_value.totalNutrients!, (value) {
-      return _then(_value.copyWith(totalNutrients: value) as $Val);
-    });
   }
 
   @override
@@ -310,12 +299,11 @@ abstract class _$$RecipeImplCopyWith<$Res> implements $RecipeCopyWith<$Res> {
       List<String>? instructions,
       List<String>? tags,
       String? externalId,
-      Nutrient? totalNutrients,
+      @JsonKey(fromJson: _parseNutrientsFromJson)
+      List<Nutrient>? totalNutrients,
       Nutrient? totalDaily,
       @JsonKey(name: 'digest') List<Digest>? digests});
 
-  @override
-  $NutrientCopyWith<$Res>? get totalNutrients;
   @override
   $NutrientCopyWith<$Res>? get totalDaily;
 }
@@ -462,9 +450,9 @@ class __$$RecipeImplCopyWithImpl<$Res>
           : externalId // ignore: cast_nullable_to_non_nullable
               as String?,
       totalNutrients: freezed == totalNutrients
-          ? _value.totalNutrients
+          ? _value._totalNutrients
           : totalNutrients // ignore: cast_nullable_to_non_nullable
-              as Nutrient?,
+              as List<Nutrient>?,
       totalDaily: freezed == totalDaily
           ? _value.totalDaily
           : totalDaily // ignore: cast_nullable_to_non_nullable
@@ -506,7 +494,8 @@ class _$RecipeImpl implements _Recipe {
       final List<String>? instructions,
       final List<String>? tags,
       this.externalId,
-      this.totalNutrients,
+      @JsonKey(fromJson: _parseNutrientsFromJson)
+      final List<Nutrient>? totalNutrients,
       this.totalDaily,
       @JsonKey(name: 'digest') final List<Digest>? digests})
       : _dietLabels = dietLabels,
@@ -519,6 +508,7 @@ class _$RecipeImpl implements _Recipe {
         _dishType = dishType,
         _instructions = instructions,
         _tags = tags,
+        _totalNutrients = totalNutrients,
         _digests = digests;
 
   factory _$RecipeImpl.fromJson(Map<String, dynamic> json) =>
@@ -654,8 +644,17 @@ class _$RecipeImpl implements _Recipe {
 
   @override
   final String? externalId;
+  final List<Nutrient>? _totalNutrients;
   @override
-  final Nutrient? totalNutrients;
+  @JsonKey(fromJson: _parseNutrientsFromJson)
+  List<Nutrient>? get totalNutrients {
+    final value = _totalNutrients;
+    if (value == null) return null;
+    if (_totalNutrients is EqualUnmodifiableListView) return _totalNutrients;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final Nutrient? totalDaily;
   final List<Digest>? _digests;
@@ -718,8 +717,8 @@ class _$RecipeImpl implements _Recipe {
             const DeepCollectionEquality().equals(other._tags, _tags) &&
             (identical(other.externalId, externalId) ||
                 other.externalId == externalId) &&
-            (identical(other.totalNutrients, totalNutrients) ||
-                other.totalNutrients == totalNutrients) &&
+            const DeepCollectionEquality()
+                .equals(other._totalNutrients, _totalNutrients) &&
             (identical(other.totalDaily, totalDaily) ||
                 other.totalDaily == totalDaily) &&
             const DeepCollectionEquality().equals(other._digests, _digests));
@@ -754,7 +753,7 @@ class _$RecipeImpl implements _Recipe {
         const DeepCollectionEquality().hash(_instructions),
         const DeepCollectionEquality().hash(_tags),
         externalId,
-        totalNutrients,
+        const DeepCollectionEquality().hash(_totalNutrients),
         totalDaily,
         const DeepCollectionEquality().hash(_digests)
       ]);
@@ -800,7 +799,8 @@ abstract class _Recipe implements Recipe {
       final List<String>? instructions,
       final List<String>? tags,
       final String? externalId,
-      final Nutrient? totalNutrients,
+      @JsonKey(fromJson: _parseNutrientsFromJson)
+      final List<Nutrient>? totalNutrients,
       final Nutrient? totalDaily,
       @JsonKey(name: 'digest') final List<Digest>? digests}) = _$RecipeImpl;
 
@@ -857,7 +857,8 @@ abstract class _Recipe implements Recipe {
   @override
   String? get externalId;
   @override
-  Nutrient? get totalNutrients;
+  @JsonKey(fromJson: _parseNutrientsFromJson)
+  List<Nutrient>? get totalNutrients;
   @override
   Nutrient? get totalDaily;
   @override

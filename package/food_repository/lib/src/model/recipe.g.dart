@@ -50,9 +50,8 @@ _$RecipeImpl _$$RecipeImplFromJson(Map<String, dynamic> json) => _$RecipeImpl(
           .toList(),
       tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
       externalId: json['externalId'] as String?,
-      totalNutrients: json['totalNutrients'] == null
-          ? null
-          : Nutrient.fromJson(json['totalNutrients'] as Map<String, dynamic>),
+      totalNutrients: _parseNutrientsFromJson(
+          json['totalNutrients'] as Map<String, Object?>?),
       totalDaily: json['totalDaily'] == null
           ? null
           : Nutrient.fromJson(json['totalDaily'] as Map<String, dynamic>),

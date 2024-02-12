@@ -36,11 +36,24 @@ class Recipe with _$Recipe {
     List<String>? instructions,
     List<String>? tags,
     String? externalId,
-    Nutrient? totalNutrients,
+    @JsonKey(fromJson: _parseNutrientsFromJson) List<Nutrient>? totalNutrients,
     Nutrient? totalDaily,
     @JsonKey(name: 'digest') List<Digest>? digests,
   }) = _Recipe;
 
   /// Public method for receiving JSON data
   factory Recipe.fromJson(Map<String, Object?> json) => _$RecipeFromJson(json);
+}
+
+List<Nutrient>? _parseNutrientsFromJson(Map<String, Object?>? json) {
+  if (json != null) {
+    final results = <Nutrient>[];
+    for (final data in json.entries) {
+      if (data.value != null) {
+        results.add(Nutrient.fromJson(data.value! as Map<String, Object?>));
+      }
+    }
+    return results;
+  }
+  return null;
 }
