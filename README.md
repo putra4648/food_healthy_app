@@ -163,6 +163,4 @@ Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info
 [very_good_cli_link]: https://github.com/VeryGoodOpenSource/very_good_cli
 -->
 ## Status
-This project status currently on rebuild
-
-untill i have free time
+This project will be rebuild again
