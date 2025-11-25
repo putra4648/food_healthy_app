@@ -1,0 +1,137 @@
+{
+  "status": "OK",
+  "selection": [
+    {
+      "sections": {
+        "Breakfast": {
+          "assigned": "http://www.edamam.com/ontologies/edamam.owl#recipe_1",
+          "_links": {
+            "self": {
+              "title": "Recipe №1",
+              "href": "https://test-cluster.edamam.com/api/recipes/v2/1?type=public"
+            }
+          }
+        },
+        "Lunch": {
+          "sections": {
+            "Starter": {
+              "assigned": "http://www.edamam.com/ontologies/edamam.owl#recipe_2",
+              "_links": {
+                "self": {
+                  "title": "Recipe №2",
+                  "href": "https://test-cluster.edamam.com/api/recipes/v2/2?type=public"
+                }
+              }
+            },
+            "Main": {
+              "assigned": "http://www.edamam.com/ontologies/edamam.owl#recipe_3",
+              "_links": {
+                "self": {
+                  "title": "Recipe №3",
+                  "href": "https://test-cluster.edamam.com/api/recipes/v2/3?type=public"
+                }
+              }
+            },
+            "Dessert": {
+              "assigned": "http://www.edamam.com/ontologies/edamam.owl#recipe_4",
+              "_links": {
+                "self": {
+                  "title": "Recipe №4",
+                  "href": "https://test-cluster.edamam.com/api/recipes/v2/4?type=public"
+                }
+              }
+            }
+          }
+        },
+        "Dinner": {
+          "sections": {
+            "Main": {
+              "assigned": "http://www.edamam.com/ontologies/edamam.owl#recipe_5",
+              "_links": {
+                "self": {
+                  "title": "Recipe №5",
+                  "href": "https://test-cluster.edamam.com/api/recipes/v2/5?type=public"
+                }
+              }
+            },
+            "Dessert": {
+              "assigned": "http://www.edamam.com/ontologies/edamam.owl#recipe_6",
+              "_links": {
+                "self": {
+                  "title": "Recipe №6",
+                  "href": "https://test-cluster.edamam.com/api/recipes/v2/6?type=public"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "sections": {
+        "Breakfast": {
+          "assigned": "http://www.edamam.com/ontologies/edamam.owl#recipe_7",
+          "_links": {
+            "self": {
+              "title": "Recipe №7",
+              "href": "https://test-cluster.edamam.com/api/recipes/v2/7?type=public"
+            }
+          }
+        },
+        "Lunch": {
+          "sections": {
+            "Starter": {
+              "assigned": "http://www.edamam.com/ontologies/edamam.owl#recipe_8",
+              "_links": {
+                "self": {
+                  "title": "Recipe №8",
+                  "href": "https://test-cluster.edamam.com/api/recipes/v2/8?type=public"
+                }
+              }
+            },
+            "Main": {
+              "assigned": "http://www.edamam.com/ontologies/edamam.owl#recipe_9",
+              "_links": {
+                "self": {
+                  "title": "Recipe №9",
+                  "href": "https://test-cluster.edamam.com/api/recipes/v2/9?type=public"
+                }
+              }
+            },
+            "Dessert": {
+              "assigned": "http://www.edamam.com/ontologies/edamam.owl#recipe_10",
+              "_links": {
+                "self": {
+                  "title": "Recipe №10",
+                  "href": "https://test-cluster.edamam.com/api/recipes/v2/10?type=public"
+                }
+              }
+            }
+          }
+        },
+        "Dinner": {
+          "sections": {
+            "Main": {
+              "assigned": "http://www.edamam.com/ontologies/edamam.owl#recipe_11",
+              "_links": {
+                "self": {
+                  "title": "Recipe №11",
+                  "href": "https://test-cluster.edamam.com/api/recipes/v2/11?type=public"
+                }
+              }
+            },
+            "Dessert": {
+              "assigned": "http://www.edamam.com/ontologies/edamam.owl#recipe_12",
+              "_links": {
+                "self": {
+                  "title": "Recipe №12",
+                  "href": "https://test-cluster.edamam.com/api/recipes/v2/12?type=public"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

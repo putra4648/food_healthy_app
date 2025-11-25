@@ -1,0 +1,110 @@
+{
+    "size": 7,
+    "plan": {
+        "accept": {
+            "all": [
+                {
+                    "health": [
+                        "SOY_FREE",
+                        "FISH_FREE",
+                        "MEDITERRANEAN"
+                    ]
+                }
+            ]
+        },
+        "fit": {
+            "ENERC_KCAL": {
+                "min": 1000,
+                "max": 2000
+            },
+            "SUGAR.added": {
+                "max": 20
+            }
+        },
+        "sections": {
+            "Breakfast": {
+                "accept": {
+                    "all": [
+                        {
+                            "dish": [
+                                "drinks",
+                                "egg",
+                                "biscuits and cookies",
+                                "bread",
+                                "pancake",
+                                "cereals"
+                            ]
+                        },
+                        {
+                            "meal": [
+                                "breakfast"
+                            ]
+                        }
+                    ]
+                },
+                "fit": {
+                    "ENERC_KCAL": {
+                        "min": 100,
+                        "max": 600
+                    }
+                }
+            },
+            "Lunch": {
+                "accept": {
+                    "all": [
+                        {
+                            "dish": [
+                                "main course",
+                                "pasta",
+                                "egg",
+                                "salad",
+                                "soup",
+                                "sandwiches",
+                                "pizza",
+                                "seafood"
+                            ]
+                        },
+                        {
+                            "meal": [
+                                "lunch/dinner"
+                            ]
+                        }
+                    ]
+                },
+                "fit": {
+                    "ENERC_KCAL": {
+                        "min": 300,
+                        "max": 900
+                    }
+                }
+            },
+            "Dinner": {
+                "accept": {
+                    "all": [
+                        {
+                            "dish": [
+                                "seafood",
+                                "egg",
+                                "salad",
+                                "pizza",
+                                "pasta",
+                                "main course"
+                            ]
+                        },
+                        {
+                            "meal": [
+                                "lunch/dinner"
+                            ]
+                        }
+                    ]
+                },
+                "fit": {
+                    "ENERC_KCAL": {
+                        "min": 200,
+                        "max": 900
+                    }
+                }
+            }
+        }
+    }
+}
